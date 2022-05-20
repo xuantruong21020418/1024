@@ -1,0 +1,39 @@
+﻿game.obj : error LNK2019: unresolved external symbol "void __cdecl move_x(unsigned char (* const)[4],bool)" (?move_x@@YAXQEAY03E_N@Z) referenced in function "void __cdecl handle_move(union SDL_Event,unsigned char (* const)[4],struct SDL_Renderer *)" (?handle_move@@YAXTSDL_Event@@QEAY03EPEAUSDL_Renderer@@@Z)
+game.obj : error LNK2019: unresolved external symbol "void __cdecl move_y(unsigned char (* const)[4],bool)" (?move_y@@YAXQEAY03E_N@Z) referenced in function "void __cdecl handle_move(union SDL_Event,unsigned char (* const)[4],struct SDL_Renderer *)" (?handle_move@@YAXTSDL_Event@@QEAY03EPEAUSDL_Renderer@@@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_GetError referenced in function "void __cdecl display_text(struct SDL_Renderer *,char const *,int)" (?display_text@@YAXPEAUSDL_Renderer@@PEBDH@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_RWFromFile referenced in function SDL_main
+game.obj : error LNK2019: unresolved external symbol SDL_FreeSurface referenced in function "void __cdecl draw_text(struct SDL_Renderer *,struct _TTF_Font *,char const *,struct SDL_Rect,struct SDL_Color)" (?draw_text@@YAXPEAUSDL_Renderer@@PEAU_TTF_Font@@PEBDUSDL_Rect@@USDL_Color@@@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_CreateWindow referenced in function "bool __cdecl initSDL(struct SDL_Window * *,struct SDL_Renderer * *)" (?initSDL@@YA_NPEAPEAUSDL_Window@@PEAPEAUSDL_Renderer@@@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_DestroyWindow referenced in function "void __cdecl closeSDL(struct SDL_Window * *)" (?closeSDL@@YAXPEAPEAUSDL_Window@@@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_PollEvent referenced in function "void __cdecl game_loop(unsigned char (* const)[4],struct SDL_Renderer *)" (?game_loop@@YAXQEAY03EPEAUSDL_Renderer@@@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_CreateRenderer referenced in function "bool __cdecl initSDL(struct SDL_Window * *,struct SDL_Renderer * *)" (?initSDL@@YA_NPEAPEAUSDL_Window@@PEAPEAUSDL_Renderer@@@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_CreateTextureFromSurface referenced in function "void __cdecl draw_text(struct SDL_Renderer *,struct _TTF_Font *,char const *,struct SDL_Rect,struct SDL_Color)" (?draw_text@@YAXPEAUSDL_Renderer@@PEAU_TTF_Font@@PEBDUSDL_Rect@@USDL_Color@@@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_SetRenderDrawColor referenced in function "void __cdecl clear_screen(struct SDL_Renderer *)" (?clear_screen@@YAXPEAUSDL_Renderer@@@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_RenderClear referenced in function "void __cdecl clear_screen(struct SDL_Renderer *)" (?clear_screen@@YAXPEAUSDL_Renderer@@@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_RenderFillRect referenced in function "void __cdecl draw_board(struct SDL_Renderer *,unsigned char const (* const)[4],struct _TTF_Font *)" (?draw_board@@YAXPEAUSDL_Renderer@@QEAY03$$CBEPEAU_TTF_Font@@@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_RenderCopy referenced in function "void __cdecl draw_text(struct SDL_Renderer *,struct _TTF_Font *,char const *,struct SDL_Rect,struct SDL_Color)" (?draw_text@@YAXPEAUSDL_Renderer@@PEAU_TTF_Font@@PEBDUSDL_Rect@@USDL_Color@@@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_RenderPresent referenced in function "void __cdecl display_text(struct SDL_Renderer *,char const *,int)" (?display_text@@YAXPEAUSDL_Renderer@@PEBDH@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_DestroyTexture referenced in function "void __cdecl draw_text(struct SDL_Renderer *,struct _TTF_Font *,char const *,struct SDL_Rect,struct SDL_Color)" (?draw_text@@YAXPEAUSDL_Renderer@@PEAU_TTF_Font@@PEBDUSDL_Rect@@USDL_Color@@@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_Delay referenced in function "void __cdecl display_text(struct SDL_Renderer *,char const *,int)" (?display_text@@YAXPEAUSDL_Renderer@@PEBDH@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_Init referenced in function "bool __cdecl initSDL(struct SDL_Window * *,struct SDL_Renderer * *)" (?initSDL@@YA_NPEAPEAUSDL_Window@@PEAPEAUSDL_Renderer@@@Z)
+game.obj : error LNK2019: unresolved external symbol SDL_Quit referenced in function "void __cdecl closeSDL(struct SDL_Window * *)" (?closeSDL@@YAXPEAPEAUSDL_Window@@@Z)
+game.obj : error LNK2019: unresolved external symbol TTF_Init referenced in function "bool __cdecl initSDL(struct SDL_Window * *,struct SDL_Renderer * *)" (?initSDL@@YA_NPEAPEAUSDL_Window@@PEAPEAUSDL_Renderer@@@Z)
+game.obj : error LNK2019: unresolved external symbol TTF_OpenFont referenced in function "void __cdecl display_text(struct SDL_Renderer *,char const *,int)" (?display_text@@YAXPEAUSDL_Renderer@@PEBDH@Z)
+game.obj : error LNK2019: unresolved external symbol TTF_SizeText referenced in function "void __cdecl draw_text(struct SDL_Renderer *,struct _TTF_Font *,char const *,struct SDL_Rect,struct SDL_Color)" (?draw_text@@YAXPEAUSDL_Renderer@@PEAU_TTF_Font@@PEBDUSDL_Rect@@USDL_Color@@@Z)
+game.obj : error LNK2019: unresolved external symbol TTF_RenderText_Blended referenced in function "void __cdecl draw_text(struct SDL_Renderer *,struct _TTF_Font *,char const *,struct SDL_Rect,struct SDL_Color)" (?draw_text@@YAXPEAUSDL_Renderer@@PEAU_TTF_Font@@PEBDUSDL_Rect@@USDL_Color@@@Z)
+game.obj : error LNK2019: unresolved external symbol TTF_CloseFont referenced in function "void __cdecl display_text(struct SDL_Renderer *,char const *,int)" (?display_text@@YAXPEAUSDL_Renderer@@PEBDH@Z)
+game.obj : error LNK2019: unresolved external symbol TTF_Quit referenced in function "void __cdecl closeSDL(struct SDL_Window * *)" (?closeSDL@@YAXPEAPEAUSDL_Window@@@Z)
+game.obj : error LNK2019: unresolved external symbol Mix_OpenAudio referenced in function "bool __cdecl initSDL(struct SDL_Window * *,struct SDL_Renderer * *)" (?initSDL@@YA_NPEAPEAUSDL_Window@@PEAPEAUSDL_Renderer@@@Z)
+game.obj : error LNK2019: unresolved external symbol Mix_LoadWAV_RW referenced in function SDL_main
+game.obj : error LNK2019: unresolved external symbol Mix_LoadMUS referenced in function SDL_main
+game.obj : error LNK2019: unresolved external symbol Mix_FreeChunk referenced in function SDL_main
+game.obj : error LNK2019: unresolved external symbol Mix_FreeMusic referenced in function SDL_main
+game.obj : error LNK2019: unresolved external symbol Mix_PlayChannelTimed referenced in function "void __cdecl handle_move(union SDL_Event,unsigned char (* const)[4],struct SDL_Renderer *)" (?handle_move@@YAXTSDL_Event@@QEAY03EPEAUSDL_Renderer@@@Z)
+game.obj : error LNK2019: unresolved external symbol Mix_PlayMusic referenced in function SDL_main
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+D:\LearnSDL2\1024\SDL_lib\SDL2\lib\x86\SDL2.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+D:\LearnSDL2\1024\SDL_lib\SDL2\lib\x86\SDL2main.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+D:\LearnSDL2\1024\SDL_lib\SDL2_image-2.0.5\lib\x86\SDL2_image.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+D:\LearnSDL2\1024\SDL_lib\SDL2_ttf-2.0.18\lib\x86\SDL2_ttf.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+D:\LearnSDL2\1024\SDL_lib\SDL2_mixer-2.0.4\lib\x86\SDL2_mixer.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+D:\LearnSDL2\1024\x64\Debug\1024.exe : fatal error LNK1120: 33 unresolved externals
