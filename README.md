@@ -3,7 +3,7 @@
 # Mô tả về trò chơi
 Sử dụng các phím điều hướng để di chuyển các khối ghép thành số to nhất có thể! Game kết thúc khi không còn di chuyển nào khả thi.
 # Hướng dẫn tải và cài đặt
-
+Tải thư mục Release về máy rồi chạy file 1024.exe
 # Ý tưởng
 Tạo ra một mảng 2 chiều lưu toàn bộ tiến trình trò chơi, ứng với mỗi giá trị của phần tử sẽ được in ra khối màu khác nhau
 Sử dụng các phím mũi tên để di chuyển các khối số.
