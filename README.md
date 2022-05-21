@@ -3,7 +3,7 @@
 # Mô tả về trò chơi
 Sử dụng các phím điều hướng để di chuyển các khối ghép thành số to nhất có thể! Game kết thúc khi không còn di chuyển nào khả thi.
 # Hướng dẫn tải và cài đặt
-Tải thư mục Release về máy rồi chạy file 1024.exe
+Tải thư mục về máy (Download Zip hoặc dùng Git clone), mở thư mục Release rồi chạy file 1024.exe
 # Ý tưởng
 Tạo ra một mảng 2 chiều lưu toàn bộ tiến trình trò chơi, ứng với mỗi giá trị của phần tử sẽ được in ra khối màu khác nhau
 Sử dụng các phím mũi tên để di chuyển các khối số.
@@ -32,4 +32,5 @@ Tính điểm dựa trên tổng tất cả các số hiện có trên bàn chơ
 3. Hướng phát triển tiếp theo :
   - Hiện tại, mỗi khi vẽ bàn chơi ra màn hình, phải vẽ lại toàn bộ các ô, điều này gây giảm hiệu suất game, khiến CPU phải hoạt động nhiều hơn
   - Hướng khắc phục: tạo ra texture riêng cho từng giá trị 2, 4, 8, 16... một lần duy nhất, sau đó chỉ cần render ra màn hình texture đó
- 
+  - Thêm animation khi di chuyển các khối số
+  - Thêm hiệu ứng khi di chuột vào nút new game
