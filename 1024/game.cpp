@@ -178,7 +178,7 @@ void button_handler(SDL_Event e, Board board)
 }
 void draw_score(SDL_Renderer* renderer, Board board, TTF_Font* font)
 {
-	char score[15]; //15 chars is enough for score.
+	char score[15];
 	sprintf_s(score, "%lu", mainGame.calculate_score(board));
 	char scoreText[30] = "Score:";
 	strncat_s(scoreText, score, 15);
@@ -217,7 +217,6 @@ void game_loop(Board board, SDL_Renderer* renderer)
 	{
 		while (SDL_PollEvent(&e) != 0)
 		{
-			//User requests quit
 			if (e.type == SDL_QUIT)
 			{
 				quit = true;
@@ -232,7 +231,6 @@ void game_loop(Board board, SDL_Renderer* renderer)
 					mainGame.clear_board(board);
 					mainGame.add_random(board);
 				}
-				//Redraw all portions of game
 				render_game(renderer, board, font);
 			}
 			else if (e.type == SDL_MOUSEBUTTONUP)
