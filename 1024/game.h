@@ -19,7 +19,7 @@ void draw_white_text(SDL_Renderer* renderer, TTF_Font* font, const char* text, S
 void clear_screen(SDL_Renderer* renderer);
 
 /* Draws black text centered inside the window. */
-void display_text(SDL_Renderer* renderer, const char* text, int size);
+void draw_black_text(SDL_Renderer* renderer, const char* text, int size);
 
 /* Draws the game tiles. */
 void draw_board(SDL_Renderer* renderer, const Board board, TTF_Font* font);

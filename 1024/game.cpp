@@ -82,7 +82,7 @@ void clear_screen(SDL_Renderer* renderer)
 	SDL_RenderClear(renderer);
 }
 
-void display_text(SDL_Renderer* renderer, const char* text, int size)
+void draw_black_text(SDL_Renderer* renderer, const char* text, int size)
 {
 	TTF_Font* font = NULL;
 	font = TTF_OpenFont(FONT_PATH, size);
@@ -227,7 +227,7 @@ void game_loop(Board board, SDL_Renderer* renderer)
 				handle_move(e, board, renderer);
 				if (mainGame.is_game_over(board))
 				{
-					display_text(renderer, "Game Over!", GOVER_FONT_SIZE);
+					draw_black_text(renderer, "Game Over!", GOVER_FONT_SIZE);
 					SDL_Delay(2000);
 					mainGame.clear_board(board);
 					mainGame.add_random(board);
@@ -269,7 +269,7 @@ int main(int argc, char* argv[])
 	initSDL();
 	load_music();
 	
-	display_text(g_renderer, "1024", TITLE_FONT_SIZE);
+	draw_black_text(g_renderer, "1024", TITLE_FONT_SIZE);
 	SDL_Delay(1500);
 	game_loop(board, g_renderer);
 
