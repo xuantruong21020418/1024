@@ -37,14 +37,14 @@ void draw_score(SDL_Renderer* renderer, Board board, TTF_Font* font);
 
 /* Draws everything for the game and renders it to screen.
    It calls clear_screen(),draw_board(),draw_score() and draw_button()
-   and also renders it to screem.
+   and also renders it to screen.
  */
 void render_game(SDL_Renderer* renderer, Board board, TTF_Font* font);
 
 /* The main game loop that handles all events and drawing */
 void game_loop(Board board, SDL_Renderer* renderer);
 
-/* Handles keyboard presses that correspond with the arrowkeys
+/* Handles keyboard presses that correspond with the arrow keys
    It transforms the game board according to the keypresses.
    It also checks if the game has been finished, draws game over screen
    and resets the board if game over.

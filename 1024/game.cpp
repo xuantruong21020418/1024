@@ -181,7 +181,7 @@ void button_handler(SDL_Event e, Board board)
 }
 void draw_score(SDL_Renderer* renderer, Board board, TTF_Font* font)
 {
-	char score[15]; //15 chars is enough for score.
+	char score[15];
 	sprintf_s(score, "%lu", mainGame.calculate_score(board));
 	char scoreText[30] = "Score:";
 	strncat_s(scoreText, score, 15);

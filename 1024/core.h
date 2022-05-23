@@ -45,13 +45,7 @@ public:
 	/* Adds a value of 1 to random place to the board. */
 	void add_random(Board board);
 
-	/*
-	 Calculates the score of a game board
-
-	 It scores the board in a simple way.
-	 Each element in the board is used as exponents of the BASE. And the
-	 sum of all BASE^element is returned.
-	 */
+	/* Calculates the score of a game board */
 	unsigned long calculate_score(const Board board);
 
 	/*
