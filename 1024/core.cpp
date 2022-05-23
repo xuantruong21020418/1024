@@ -80,7 +80,19 @@ void Game::add_random(Board board)
 	}
 	if (v.size() > 0) {
 		unsigned int index = rand() % v.size();
+		for (unsigned int x = 0; x < SIZE; x++)
+		{
+			for (unsigned int y = 0; y < SIZE; y++)
+			{
+				if (board[x][y] > 5)
+				{
+					board[v[index].first][v[index].second] = rand() % 2 + 1;
+					return;
+				}
+			}
+		}
 		board[v[index].first][v[index].second] = 1;
+		
 	}
 }
 

@@ -130,6 +130,7 @@ void draw_board(SDL_Renderer* renderer, const Board board, TTF_Font* font)
 
 void handle_move(SDL_Event e, Board board, SDL_Renderer* renderer)
 {
+	
 	switch (e.key.keysym.sym)
 	{
 	case SDLK_UP:
@@ -214,12 +215,12 @@ void game_loop(Board board, SDL_Renderer* renderer)
 
 	render_game(renderer, board, font);
 
-	bool quit = false;
+	bool quit = false, flag = true;
 	SDL_Event e;
 	while (!quit)
 	{
-		while (SDL_PollEvent(&e) != 0)
-		{
+		SDL_PollEvent(&e);
+		
 			//User requests quit
 			if (e.type == SDL_QUIT)
 			{
@@ -231,9 +232,15 @@ void game_loop(Board board, SDL_Renderer* renderer)
 				if (mainGame.is_game_over(board))
 				{
 					draw_black_text(renderer, "Game Over!", "", GOVER_FONT_SIZE);
+					flag = false;
 					SDL_Delay(2000);
 					mainGame.clear_board(board);
 					mainGame.add_random(board);
+					time_t game_over_time = time(NULL);
+					SDL_Event tmp_e;
+					while (time(NULL) - game_over_time < 2) {
+						SDL_PollEvent(&tmp_e);
+					};
 				}
 				//Redraw all portions of game
 				render_game(renderer, board, font);
@@ -243,7 +250,7 @@ void game_loop(Board board, SDL_Renderer* renderer)
 				button_handler(e, board);
 				render_game(renderer, board, font);
 			}
-		}
+		
 	}
 	TTF_CloseFont(font);
 }

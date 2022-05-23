@@ -42,7 +42,7 @@ public:
 	/* This zeros out the entire game board. */
 	void clear_board(Board board);
 
-	/* Adds a value of 1 to random place to the board. */
+	/* Adds a value of 1 or 2 to random place to the board. */
 	void add_random(Board board);
 
 	/* Calculates the score of a game board */
