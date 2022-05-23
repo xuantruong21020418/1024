@@ -16,7 +16,7 @@ Tính điểm dựa trên tổng tất cả các số hiện có trên bàn chơ
 2. Di chuyển khối số ghép thành số lớn hơn
   Demo: https://youtube.com/shorts/D6JfUElYJ3A
 3. Game kết thúc khi không còn di chuyển khả thi, hiển thị Game Over và bắt đầu trò chơi mới
-  Demo: https://youtube.com/shorts/-zkXAr6n6wQ
+  Demo: https://youtube.com/shorts/kUYdfaG31m0
   
 # Các kỹ thuật lập trình đã sử dụng
 
@@ -34,3 +34,4 @@ Tính điểm dựa trên tổng tất cả các số hiện có trên bàn chơ
   - Hướng khắc phục: tạo ra texture riêng cho từng giá trị 2, 4, 8, 16... một lần duy nhất, sau đó chỉ cần render ra màn hình texture đó
   - Thêm animation khi di chuyển các khối số
   - Thêm hiệu ứng khi di chuột vào nút new game
+  - Thêm High Score
