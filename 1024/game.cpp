@@ -135,7 +135,7 @@ void handle_move(SDL_Event e, Board board, SDL_Renderer* renderer)
 	{
 	case SDLK_UP:
 		Mix_PlayChannel(-1, g_mix_music, 0);
-		
+		mainGame.move_y(board, 0);
 		break;
 	case SDLK_DOWN:
 		Mix_PlayChannel(-1, g_mix_music, 0);
