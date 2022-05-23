@@ -82,7 +82,7 @@ void clear_screen(SDL_Renderer* renderer)
 	SDL_RenderClear(renderer);
 }
 
-void draw_black_text(SDL_Renderer* renderer, const char* text, int size)
+void draw_black_text(SDL_Renderer* renderer, const char* text1, const char* text2, int size)
 {
 	TTF_Font* font = NULL;
 	font = TTF_OpenFont(FONT_PATH, size);
@@ -94,7 +94,10 @@ void draw_black_text(SDL_Renderer* renderer, const char* text, int size)
 	SDL_Color black = { g_fg.r, g_fg.g, g_fg.b, g_fg.a };
 	clear_screen(renderer);
 	SDL_Rect rect1 = { SCREEN_PAD, SCREEN_HEIGHT / 4, SCREEN_WIDTH - 2 * SCREEN_PAD, SCREEN_HEIGHT / 2 };
-	draw_text(renderer, font, text, rect1, black);
+	SDL_Rect rect2 = { SCREEN_PAD, SCREEN_HEIGHT / 2, SCREEN_WIDTH - 2 * SCREEN_PAD, SCREEN_HEIGHT / 3 };
+	draw_text(renderer, font, text1, rect1, black);
+	font = TTF_OpenFont(FONT_PATH, size/4);
+	draw_text(renderer, font, text2, rect2, black);
 	SDL_RenderPresent(renderer);
 	TTF_CloseFont(font);
 }
@@ -178,7 +181,7 @@ void button_handler(SDL_Event e, Board board)
 }
 void draw_score(SDL_Renderer* renderer, Board board, TTF_Font* font)
 {
-	char score[15];
+	char score[15]; //15 chars is enough for score.
 	sprintf_s(score, "%lu", mainGame.calculate_score(board));
 	char scoreText[30] = "Score:";
 	strncat_s(scoreText, score, 15);
@@ -217,6 +220,7 @@ void game_loop(Board board, SDL_Renderer* renderer)
 	{
 		while (SDL_PollEvent(&e) != 0)
 		{
+			//User requests quit
 			if (e.type == SDL_QUIT)
 			{
 				quit = true;
@@ -226,11 +230,12 @@ void game_loop(Board board, SDL_Renderer* renderer)
 				handle_move(e, board, renderer);
 				if (mainGame.is_game_over(board))
 				{
-					draw_black_text(renderer, "Game Over!", GOVER_FONT_SIZE);
+					draw_black_text(renderer, "Game Over!", "", GOVER_FONT_SIZE);
 					SDL_Delay(2000);
 					mainGame.clear_board(board);
 					mainGame.add_random(board);
 				}
+				//Redraw all portions of game
 				render_game(renderer, board, font);
 			}
 			else if (e.type == SDL_MOUSEBUTTONUP)
@@ -267,10 +272,28 @@ int main(int argc, char* argv[])
 	initSDL();
 	load_music();
 	
-	draw_black_text(g_renderer, "1024", TITLE_FONT_SIZE);
-	SDL_Delay(1500);
-	game_loop(board, g_renderer);
+	draw_black_text(g_renderer, "1024", "Click to start!", TITLE_FONT_SIZE);
 
+	// Click to start handle
+	bool quit = false;
+	SDL_Event e;
+	while (!quit)
+	{
+		while (SDL_PollEvent(&e) != 0)
+		{
+			//User requests quit
+			if (e.type == SDL_QUIT)
+			{
+				quit = true;
+			}
+			else if (e.type == SDL_MOUSEBUTTONUP)
+			{
+				game_loop(board, g_renderer);
+				quit = true;
+			}
+		}
+	}
+	
 	closeSDL();
 	Mix_FreeMusic(g_background_music);
 	Mix_FreeChunk(g_mix_music);

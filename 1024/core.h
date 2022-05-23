@@ -34,6 +34,7 @@ public:
 
 	/*
 	  Checks if there are possible moves left on the game board.
+
 	  Checks for both movement and combinations of tiles.
 	 */
 	bool is_game_over(const Board board);
@@ -44,7 +45,13 @@ public:
 	/* Adds a value of 1 to random place to the board. */
 	void add_random(Board board);
 
-	/* Calculates the score of a game board */
+	/*
+	 Calculates the score of a game board
+
+	 It scores the board in a simple way.
+	 Each element in the board is used as exponents of the BASE. And the
+	 sum of all BASE^element is returned.
+	 */
 	unsigned long calculate_score(const Board board);
 
 	/*

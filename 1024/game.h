@@ -18,8 +18,8 @@ void draw_white_text(SDL_Renderer* renderer, TTF_Font* font, const char* text, S
 /* Clears the window screen. Fills a color to entire screen. */
 void clear_screen(SDL_Renderer* renderer);
 
-/* Draws black text centered inside the window. */
-void draw_black_text(SDL_Renderer* renderer, const char* text, int size);
+/* Draws black text use for menu. */
+void draw_black_text(SDL_Renderer* renderer, const char* text1, const char* text2, int size);
 
 /* Draws the game tiles. */
 void draw_board(SDL_Renderer* renderer, const Board board, TTF_Font* font);
@@ -37,14 +37,14 @@ void draw_score(SDL_Renderer* renderer, Board board, TTF_Font* font);
 
 /* Draws everything for the game and renders it to screen.
    It calls clear_screen(),draw_board(),draw_score() and draw_button()
-   and also renders it to screen.
+   and also renders it to screem.
  */
 void render_game(SDL_Renderer* renderer, Board board, TTF_Font* font);
 
 /* The main game loop that handles all events and drawing */
 void game_loop(Board board, SDL_Renderer* renderer);
 
-/* Handles keyboard presses that correspond with the arrow keys
+/* Handles keyboard presses that correspond with the arrowkeys
    It transforms the game board according to the keypresses.
    It also checks if the game has been finished, draws game over screen
    and resets the board if game over.
