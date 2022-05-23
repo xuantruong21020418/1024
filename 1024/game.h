@@ -19,7 +19,7 @@ void draw_white_text(SDL_Renderer* renderer, TTF_Font* font, const char* text, S
 void clear_screen(SDL_Renderer* renderer);
 
 /* Draws black text use for menu. */
-void draw_black_text(SDL_Renderer* renderer, const char* text1, const char* text2, int size);
+void draw_black_text(SDL_Renderer* renderer, const char* text1, const char* text2, int size1, int size2);
 
 /* Draws the game tiles. */
 void draw_board(SDL_Renderer* renderer, const Board board, TTF_Font* font);

@@ -12,7 +12,7 @@
 #define TITLE_FONT_SIZE 180
 
 /* The font size used while displaying "Game Over" at the end of game. */
-#define GOVER_FONT_SIZE 70
+#define GOVER_FONT_SIZE 75
 
 /* The font size used while displaying each number inside the cells */
 #define CELL_FONT_SIZE 40

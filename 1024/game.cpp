@@ -82,10 +82,10 @@ void clear_screen(SDL_Renderer* renderer)
 	SDL_RenderClear(renderer);
 }
 
-void draw_black_text(SDL_Renderer* renderer, const char* text1, const char* text2, int size)
+void draw_black_text(SDL_Renderer* renderer, const char* text1, const char* text2, int size1, int size2)
 {
 	TTF_Font* font = NULL;
-	font = TTF_OpenFont(FONT_PATH, size);
+	font = TTF_OpenFont(FONT_PATH, size1);
 	if (font == NULL)
 	{
 		printf("The required font was not found. TTF_OpenFont: %s\n", TTF_GetError());
@@ -96,7 +96,7 @@ void draw_black_text(SDL_Renderer* renderer, const char* text1, const char* text
 	SDL_Rect rect1 = { SCREEN_PAD, SCREEN_HEIGHT / 4, SCREEN_WIDTH - 2 * SCREEN_PAD, SCREEN_HEIGHT / 2 };
 	SDL_Rect rect2 = { SCREEN_PAD, SCREEN_HEIGHT / 2, SCREEN_WIDTH - 2 * SCREEN_PAD, SCREEN_HEIGHT / 3 };
 	draw_text(renderer, font, text1, rect1, black);
-	font = TTF_OpenFont(FONT_PATH, size/4);
+	font = TTF_OpenFont(FONT_PATH, size2);
 	draw_text(renderer, font, text2, rect2, black);
 	SDL_RenderPresent(renderer);
 	TTF_CloseFont(font);
@@ -231,7 +231,11 @@ void game_loop(Board board, SDL_Renderer* renderer)
 				handle_move(e, board, renderer);
 				if (mainGame.is_game_over(board))
 				{
-					draw_black_text(renderer, "Game Over!", "", GOVER_FONT_SIZE);
+					char score[15];
+					sprintf_s(score, "%lu", mainGame.calculate_score(board));
+					char scoreText[30] = "Score: ";
+					strncat_s(scoreText, score, 15);
+					draw_black_text(renderer, "Game Over!", scoreText, GOVER_FONT_SIZE, GOVER_FONT_SIZE/2);
 					flag = false;
 					SDL_Delay(2000);
 					mainGame.clear_board(board);
@@ -279,7 +283,7 @@ int main(int argc, char* argv[])
 	initSDL();
 	load_music();
 	
-	draw_black_text(g_renderer, "1024", "Click to start!", TITLE_FONT_SIZE);
+	draw_black_text(g_renderer, "1024", "Click to start!", TITLE_FONT_SIZE, TITLE_FONT_SIZE/4);
 
 	// Click to start handle
 	bool quit = false;
